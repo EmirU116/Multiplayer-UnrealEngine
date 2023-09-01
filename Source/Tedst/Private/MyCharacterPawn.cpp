@@ -2,8 +2,9 @@
 
 
 #include "MyCharacterPawn.h"
-
 #include "Kismet/KismetMathLibrary.h"
+#include "Net/UnrealNetwork.h"
+
 
 // Sets default values
 AMyCharacterPawn::AMyCharacterPawn()
@@ -29,4 +30,3 @@ void AMyCharacterPawn::Move(FVector2D AxisValue)
 		GetActorLocation()
 		+ MoveVector);
 }
-
