@@ -11,9 +11,13 @@ class TEDST_API AMyCharacterPawn : public APawn
 {
 	GENERATED_BODY()
 
+	
 public:
 	// Sets default values for this pawn's properties
 	AMyCharacterPawn();
+
+	UPROPERTY(EditAnywhere)
+	UStaticMeshComponent* flashlight;
 
 	UFUNCTION(BlueprintCallable)
 	void Move(FVector2D AxisValue);

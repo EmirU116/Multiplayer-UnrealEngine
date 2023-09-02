@@ -8,10 +8,11 @@
  {
  	// set default pawn class to our Blueprinted character
  	static ConstructorHelpers::FClassFinder<APawn> PlayerPawnBPClass(TEXT("/Game/InteractCpp/Character/BP_Player"));
+ 	static ConstructorHelpers::FClassFinder<ACharacter> MyPlayerCharacterBPClass(TEXT("/Game/Player/BP_MYPLayer"));
  	static ConstructorHelpers::FClassFinder<APlayerController> PlayerControllerBPClass(TEXT("/Game/InteractCpp/BP_Controller"));
  	if (PlayerPawnBPClass.Class != NULL)
  	{
-		DefaultPawnClass = PlayerPawnBPClass.Class;
+		DefaultPawnClass = MyPlayerCharacterBPClass.Class;
  		PlayerControllerClass = PlayerControllerBPClass.Class;
  	}
 }
