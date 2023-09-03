@@ -33,12 +33,12 @@ void AMyPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
-void AMyPlayer::ToggleFlash(TArray<UStaticMeshComponent> target)
+void AMyPlayer::ToggleFlash(USceneComponent* target)
 {
 
 	if (isFlashOn)
 	{
-		target.SetVisibility(true);
+		target->SetVisibility(true);
 		isFlashOn = false;
 	}
 	else

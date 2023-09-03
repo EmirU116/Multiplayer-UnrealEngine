@@ -29,7 +29,7 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UFUNCTION(BlueprintCallable)
-	void ToggleFlash(TArray<USceneComponent>* target);
+	void ToggleFlash(USceneComponent* target);
 	
 	UFUNCTION(BlueprintCallable)
 	void Move(FVector2D AxisValue);
