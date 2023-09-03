@@ -3,7 +3,8 @@
 
 #include "MyPlayer.h"
 
-#include "Kismet/KismetMaterialLibrary.h"
+#include "MovieSceneSequenceID.h"
+#include "Components/CapsuleComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 
 // Sets default values
@@ -11,16 +12,12 @@ AMyPlayer::AMyPlayer()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
-	flashlight = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("FlashLight"));
-
 }
 
 // Called when the game starts or when spawned
 void AMyPlayer::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame
@@ -36,6 +33,21 @@ void AMyPlayer::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
 }
+void AMyPlayer::ToggleFlash(TArray<UStaticMeshComponent> target)
+{
+
+	if (isFlashOn)
+	{
+		target.SetVisibility(true);
+		isFlashOn = false;
+	}
+	else
+	{
+		target->SetVisibility(false);
+		isFlashOn = true;
+	}
+}
+
 
 void AMyPlayer::Move(FVector2D AxisValue)
 {

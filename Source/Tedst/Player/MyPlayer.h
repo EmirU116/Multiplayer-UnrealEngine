@@ -29,8 +29,14 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UFUNCTION(BlueprintCallable)
+	void ToggleFlash(TArray<USceneComponent>* target);
+	
+	UFUNCTION(BlueprintCallable)
 	void Move(FVector2D AxisValue);
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	float moveSpeed = 25;
+
+	bool isFlashOn = true;
+	
 };
